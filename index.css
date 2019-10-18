@@ -1,0 +1,42 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+
+header {
+    font-size: 20pt;
+    color: blue;
+    text-align: center;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.orangeBox {
+    width: 400px;
+    height: 250px;
+    margin-top: 20px;
+    padding: 10px;
+    border: 5px solid orange;
+}
+
+.inputContainer  {
+    margin-top: 20px;
+}
+
+.message {
+    visibility: hidden;
+    font-size: 14px;
+}

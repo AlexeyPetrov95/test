@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>midterm</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <header>User Login</header>
+            <section>
+                <div class="orangeBox">
+                    <div class="inputContainer">
+                        <label for="username">UserName</label>
+                        <input type="text" maxlength="12" name="username" id="username">
+                    </div>
+                    <div class="inputContainer"> 
+                        <label for="password">Password</label>
+                        <input type="password" maxlength="12" name="password" id="password">
+                    </div>
+                    <div class="inputContainer">
+                        <label for="confirmation">Confirmation</label>
+                        <input type="password" maxlength="12" name="confirmation" id="confirmation">
+                    </div>
+                    <button onclick="validateForm()" class="submit">Submit</button>
+                    <div>
+                        <label class="message"></label>
+                    </div>
+                </div>
+            </section>
+        </div>
+     
+        <script>
+            const maxlength = 8;
+            const minLength = 4;
+            function validateForm() {
+                var msgBox = document.getElementsByClassName('message')[0];
+                msgBox.style.visibility = "visible";
+
+                var userNameInput = document.getElementById('username').value;
+                var passwordInput = document.getElementById('password').value;
+                var confirmationInput = document.getElementById('confirmation').value;
+
+                var passwordIsValid = isValidInput(passwordInput);
+                var confirmationIsValid = isValidInput(confirmationInput);
+
+                if (!isValidInput(userNameInput) || !passwordIsValid || !confirmationIsValid) {
+                    msgBox.innerHTML = "The length of user name and password must be between 4 and 8";
+                    msgBox.style.color = "red";
+                    return
+                }
+                
+                if (passwordIsValid && confirmationIsValid && passwordInput !== confirmationInput) {
+                    msgBox.innerHTML = "The passwords are different";
+                    msgBox.style.color = "red";
+                } else {
+                    msgBox.innerHTML = "The input values are correct";
+                    msgBox.style.color = "green";
+                }
+            }
+
+            function isValidInput (value) {
+                if (value.length > maxlength || value.length < minLength) return false;
+                return true;
+            }
+        </script>
+    </body>
+</html>
