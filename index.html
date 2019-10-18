@@ -12,19 +12,21 @@
             <section>
                 <div class="orangeBox">
                     <div class="inputContainer">
-                        <label for="username">UserName</label>
+                        <label class="label" for="username">UserName</label>
                         <input type="text" maxlength="12" name="username" id="username">
                     </div>
                     <div class="inputContainer"> 
-                        <label for="password">Password</label>
+                        <label class="label" for="password">Password</label>
                         <input type="password" maxlength="12" name="password" id="password">
                     </div>
                     <div class="inputContainer">
-                        <label for="confirmation">Confirmation</label>
+                        <label class="label" for="confirmation">Confirmation</label>
                         <input type="password" maxlength="12" name="confirmation" id="confirmation">
                     </div>
-                    <button onclick="validateForm()" class="submit">Submit</button>
-                    <div>
+                    <div class="inputContainer">
+                       <input type="submit" value="Submit" onclick="validateForm()" class="submit"/>
+                    </div>
+                    <div class="inputContainer">
                         <label class="message"></label>
                     </div>
                 </div>
